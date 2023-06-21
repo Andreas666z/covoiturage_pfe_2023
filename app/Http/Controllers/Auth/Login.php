@@ -34,26 +34,26 @@ class Login extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        // dd($email,$password);
+        //  dd($email,$password);
         foreach ($conducteurs as $conducteur) {
-            if ($conducteur->login == $email && $conducteur->passe == $password) {
+            if ($conducteur->login == $email && $conducteur->password == $password) {
                 session()->put('conducteur', $conducteur);
 
-                return redirect()->route('index');
+                // return view('conducteur/dashboard');
 
                 return dd(session()->get('conducteur'));
             }
         }
 
         foreach ($admins as $admin) {
-            if ($admin->email == $email && $admin->passe == $password) {
+            if ($admin->email == $email && $admin->password == $password) {
                 session()->put('admin', $admin);
                 return dd(session()->get('admin'));
             }
         }
 
         foreach ($passagers as $passager) {
-            if ($passager->email == $email && $passager->passe == $password) {
+            if ($passager->email == $email && $passager->password == $password) {
                 session()->put('passager', $passager);
                 return dd(session()->get('passager'));
             }
