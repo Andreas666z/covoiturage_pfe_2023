@@ -11,6 +11,21 @@ class Passager extends Model
 
     protected $table = 'passager';
 
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+    ];
+
+    //Hiding Attributes From JSON
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    
+
     public function reservations()
     {
         return $this->hasMany(Reservation::class, 'idPassager');

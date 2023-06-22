@@ -99,8 +99,23 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-    ],
 
+        //passager
+        'passagers' => [
+            'provider' => 'passagers',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        //conducteur
+        'conducteurs' => [
+            'provider' => 'conducteurs',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+    ],
     /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout
